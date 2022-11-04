@@ -1,16 +1,15 @@
 use rustler::{Env, Error, ResourceArc, Term};
-use std::boxed::Box;
 use wordcut_engine::Wordcut;
 
 struct WordcutResource {
-    wordcut: Box<Wordcut>,
+    wordcut: Wordcut,
 }
 
 impl WordcutResource {
     fn new(path: &std::path::Path) -> std::io::Result<Self> {
         let dict = wordcut_engine::load_dict(path)?;
         Ok(Self {
-            wordcut: Box::new(Wordcut::new(dict)),
+            wordcut: Wordcut::new(dict),
         })
     }
 }
