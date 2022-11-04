@@ -1,0 +1,28 @@
+# Wordcut example usage
+
+```elixir
+Mix.install([
+  {:wordcut, path: "."}
+])
+```
+
+## Segmenting thai words
+
+First of all, you need to have a dictionary file
+
+```elixir
+dict = """
+กิน
+กับ
+ข้าว
+"""
+
+File.write!("dict.txt", dict)
+```
+
+Then load dictionary file using `Wordcut.load/1` and using `Wordcut.segment/2` to segmenting thai sentence into list of words.
+
+```elixir
+wordcut = Wordcut.load("dict.txt")
+Wordcut.segment(wordcut, "กินกับข้าว")
+```
