@@ -293,9 +293,9 @@ checksum = "1c38c045535d93ec4f0b4defec448e4291638ee608530863b1e2ba115d4fff7f"
 
 [[package]]
 name = "wordcut-engine"
-version = "1.1.4"
+version = "1.1.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "0ca54b2836f01bd35558707d948be7d966cc07c9cf99bde4ba4068e4dfbd5a11"
+checksum = "a78dc15fe7d793a84baef5fecfb2c791c946c20c63ac7ed7b032e206d7b88371"
 dependencies = [
  "anyhow",
  "lazy_static",

@@ -23,8 +23,6 @@ fn load(env: Env, _: Term) -> bool {
 fn new(path: String) -> Result<ResourceArc<WordcutResource>, Error> {
     match WordcutResource::new(std::path::Path::new(&path)) {
         Ok(resource) => Ok(ResourceArc::new(resource)),
-        // NOTE: Currently, code will not return this error due to library crash when
-        // cannot find dictionary file. The fixes is opened at https://github.com/veer66/wordcut-engine/pull/5.
         Err(_) => Err(Error::Atom("load_dict_error")),
     }
 }
